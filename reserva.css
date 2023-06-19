@@ -11,11 +11,13 @@
 }
 body{
     font-family: 'Nunito Sans', sans-serif;
+    background:whitesmoke;
 }
 h1{
     text-align: center;
     margin: 20px 0;
     font-family: pokemonFuente,Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color:hsl(60, 8%, 14%);
 }
 
 .Bienvenida{
