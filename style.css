@@ -1,0 +1,25 @@
+#pagelink{
+    color: white;
+}
+
+#copyright{
+    color: white;
+}
+
+footer{
+    min-height: 15%;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: brown;
+}
+
+ul{
+    list-style-type: none;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 10px;
+    padding: 0;
+    overflow: hidden;
+    background-color: brown;
+}
