@@ -13,6 +13,73 @@ body{
     font-family: 'Nunito Sans', sans-serif;
     background:whitesmoke;
 }
+
+.popUp {
+    display: none;
+    background-color: hsl(60, 8%, 14%);
+    font-family: 'Nunito Sans', sans-serif;
+    text-align: center;
+    color:white;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    padding: 20px;
+  }
+  
+  h3 {
+    color: whitesmoke;
+    text-align: center;
+    margin-bottom:10px;
+  }
+  .popUp form{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    margin:30px 0;
+  }
+  .popUp p{
+    color: yellow;
+  }
+  .popUp input{
+    width: 200px;
+    height:30px;
+    border-radius:4px;
+    padding:8px;
+    border:none;
+    border-bottom:2px solid yellow;
+    transition: border-bottom-color 0.8s ease;
+    background:transparent;
+    margin-bottom:30px;
+    color:whitesmoke;
+    outline:none;
+  }
+  .popUp button{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-top:20px;
+    width:80px;
+    height:30px;
+    padding:12px;
+    outline:none;
+    border:none;
+    border-radius:4px;
+    border:2px solid transparent;
+    border-bottom:2px solid yellow;
+    background:transparent;
+    color:white;
+    font-family:'Nunito Sans', sans-serif;
+  }
+  .popUp button:hover{
+    border:2px solid yellow;
+    cursor:pointer;
+  }
+  .popUp input:focus{
+    border-bottom-color:#bb140b;
+  }
+
 h1{
     text-align: center;
     margin: 20px 0;
