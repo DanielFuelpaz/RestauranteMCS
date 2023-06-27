@@ -254,6 +254,9 @@ td:hover{
 .form__boton-reservar:hover{
     background: linear-gradient(to bottom, #db8b00 50%, #000000 20%, #f7f7f7 60% );
 }
+.selected{
+    background-color: teal;
+}
 @media (min-width:800px){
     .reservacion__container
     {

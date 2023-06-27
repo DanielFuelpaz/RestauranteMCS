@@ -33,7 +33,7 @@
                 </div>
                 <p class="promo__description">Por cada desayuno con temática del día del padre, el segundo desayuno con la misma temática va
                     a mitad de precio.</p>
-                    <button class="promo__button-reservar"><a href="reserva.html">Reservar</a></button>
+                    <button class="promo__button-reservar"><a href="reserva.html">Reservas</a></button>
                 </div>
             </article>
     </aside>
@@ -283,10 +283,10 @@
                 <p>LLene sus datos para poder reservar con éxito</p>
         <form id="formulario">
           <label for="nombre">Nombre:</label>
-          <input type="text" id="nombre" name="nombre" required>
+          <input type="text" id="nombre" name="nombre" oninput="validarTexto(this)" required>
           
           <label for="apellido">Apellido:</label>
-          <input type="text" id="apellido" name="apellido" required>
+          <input type="text" id="apellido" name="apellido" oninput="validarTexto(this)" required>
 
           <label for="email">Email:</label>
           <input type="email" id="email" name="email" placeholder="badilleins@gmail.com" required>
