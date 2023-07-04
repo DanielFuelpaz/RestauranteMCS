@@ -16,6 +16,7 @@ let fechaReservaParseada=null;
 let ventana;
 let popUpForm = document.getElementById("popUp");   
 let btnConfirmar = document.getElementById("btnConfirmar");
+let cantidadPersonasSeleccionada;
 
 let botonReserva1 = document.getElementById('reservarbtn1');
 let botonReserva2 = document.getElementById('reservarbtn2');
@@ -249,8 +250,7 @@ botonReserva1.addEventListener('click',function(){
     let horas = cantidadHorasSeleccionada.substring(0,cantidadHorasSeleccionada.indexOf(":"));
     fechaReservaParseada = new Date(fechaReserva);
     fechaReservaParseada.setHours(horas);
-    let cantidadPersonasSeleccionada = selectPersona1.value;
-     numPersonas = cantidadPersonasSeleccionada.substring(0,cantidadPersonasSeleccionada.indexOf(" "));
+    cantidadPersonasSeleccionada = selectPersona1.value;
      popUpForm.style.display='block';
 });
 
@@ -305,8 +305,7 @@ botonReserva2.addEventListener('click',function(){
     let horas = cantidadHorasSeleccionada.substring(0,cantidadHorasSeleccionada.indexOf(":"));
     let fechaReservaParseada = new Date(fechaReserva);
     fechaReservaParseada.setHours(horas);
-    let cantidadPersonasSeleccionada = selectPersona2.value;
-     numPersonas = cantidadPersonasSeleccionada.substring(0,cantidadPersonasSeleccionada.indexOf(" "));
+   cantidadPersonasSeleccionada = selectPersona2.value;
      popUpForm.style.display='block';
   });
 botonReserva3.addEventListener('click',function(){
@@ -360,8 +359,7 @@ botonReserva3.addEventListener('click',function(){
     let horas = cantidadHorasSeleccionada.substring(0,cantidadHorasSeleccionada.indexOf(":"));
    fechaReservaParseada = new Date(fechaReserva);
     fechaReservaParseada.setHours(horas);
-    let cantidadPersonasSeleccionada = selectPersona3.value;
-    numPersonas = cantidadPersonasSeleccionada.substring(0,cantidadPersonasSeleccionada.indexOf(" "));
+   cantidadPersonasSeleccionada = selectPersona3.value;
     popUpForm.style.display='block';
   });
 botonReserva4.addEventListener('click',function(){
@@ -415,8 +413,7 @@ botonReserva4.addEventListener('click',function(){
     let horas = cantidadHorasSeleccionada.substring(0,cantidadHorasSeleccionada.indexOf(":"));
     fechaReservaParseada = new Date(fechaReserva);
     fechaReservaParseada.setHours(horas);
-    let cantidadPersonasSeleccionada = selectPersona4.value;
-   numPersonas = cantidadPersonasSeleccionada.substring(0,cantidadPersonasSeleccionada.indexOf(" "));
+     cantidadPersonasSeleccionada = selectPersona4.value;
    popUpForm.style.display='block';
   });
   
@@ -533,7 +530,7 @@ function validarNumero(phoneValue) {
                             const nuevaReserva = {
                           FEC_HOR_RES: fechaActual,
                           FEC_HOR_LLE: fechaReservaParseada,
-                          CAN_PER:numPersonas,
+                          CAN_PER:cantidadPersonasSeleccionada,
                           CED_CLI_RES:cedulaCliente, 
                           ID_RES_PER: IDRestaurante
                         };
