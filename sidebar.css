@@ -1,0 +1,130 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Nunito Sans', sans-serif;
+}
+.sidebar-activator
+{
+    position: absolute;
+    top: 150px;
+    right: 8px;
+    display: flex;
+    flex-direction: column;
+    font-size: small;    
+    align-items: center;
+    gap:4px;
+    padding: 8px;
+    width: 100px;
+    text-align: center;
+}
+.sidebar-activator button{
+    background-color: transparent;
+    outline: none;
+    border:none;
+    align-self: end;
+}
+ .activator__alert
+{
+    background-color: #ffff00;
+    display: none;
+    color:  hsl(60, 8%, 14%);
+    padding:4px;
+} 
+.sidebar-activator .activator__img{
+    width: 50px;
+    height: 50px;
+}
+aside{
+    background: hsl(60, 8%, 14%);
+    width: 200px;
+    display: none;
+    place-items: center;
+    right: 0;
+    position: absolute;
+}
+.img-container{
+    background: url("https://i.ibb.co/fSwFFT3/desayuno-Promo.jpg");
+    width:200px;
+    height: 220px;
+    position: relative;
+    background-size: cover;
+}
+#closeButton{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: transparent;
+    outline: none;
+    border: none;
+}
+.img-container img{
+    width: 20px;
+    height: 20px;
+}
+.sideBar-item{
+    display: grid;
+    place-items: center;
+}
+.promo-container{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.promo__header{
+    margin: 60px 0 0;
+    text-align: start;
+    width: 100%;
+}
+.header__price{
+    color: white;
+    font-weight: bold;
+}
+.header__title{
+    margin-top:4px;
+}
+.header__title, .promo__description{
+    color: #FFFF00;
+    margin-bottom: 20px;
+}
+.promo__button-reservar{
+    margin: 35px 0 35px;
+    padding: 10px;
+    border-radius: 60%;
+    height: 70px;
+    width: 70px;
+    background:linear-gradient(to bottom, #f71b1b 50%, #000000 20%, #f7f7f7 60% );    outline: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Nunito Sans', sans-serif;
+    color: white;
+    border: 1px solid #000000;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+    font-size: 0.8em;
+}
+.promo__button-reservar a{
+    color: white;
+    text-decoration: none;
+}
+/*status*/
+.promo__button-reservar:hover{
+    background: linear-gradient(to bottom, #db8b00 50%, #000000 20%, #f7f7f7 60% );
+}
+.img-container img:hover{
+    cursor: pointer;
+    transform: scale(0.9);
+}
+button{
+    cursor: pointer;
+}
+.promo__button-reservar{
+    cursor:default;
+}
+.activator__img:hover{
+    transform: scale(1.1);
+}
+
+

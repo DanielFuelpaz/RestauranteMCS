@@ -1,0 +1,277 @@
+
+@font-face {
+    font-family: pokemonFuente;
+    src: url('C:\\Users\\Personal\\AppData\\Local\\Microsoft\\Windows\\Fonts\\Pokemon Classic.ttf');
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding:0;
+}
+body{
+    font-family: 'Nunito Sans', sans-serif;
+    background:whitesmoke;
+}
+
+.popUp {
+    display: none;
+    background-color: hsl(60, 8%, 14%);
+    font-family: 'Nunito Sans', sans-serif;
+    text-align: center;
+    color:white;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    padding: 20px;
+  }
+  
+  h3 {
+    color: whitesmoke;
+    text-align: center;
+    margin-bottom:10px;
+  }
+  .popUp form{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    margin:30px 0;
+  }
+  .popUp p{
+    color: yellow;
+  }
+  .popUp input{
+    width: 200px;
+    height:30px;
+    border-radius:4px;
+    padding:8px;
+    border:none;
+    border-bottom:2px solid yellow;
+    transition: border-bottom-color 0.8s ease;
+    background:transparent;
+    margin-bottom:30px;
+    color:whitesmoke;
+    outline:none;
+  }
+  .popUp button{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-top:20px;
+    width:80px;
+    height:30px;
+    padding:12px;
+    outline:none;
+    border:none;
+    border-radius:4px;
+    border:2px solid transparent;
+    border-bottom:2px solid yellow;
+    background:transparent;
+    color:white;
+    font-family:'Nunito Sans', sans-serif;
+  }
+  .popUp button:hover{
+    border:2px solid yellow;
+    cursor:pointer;
+  }
+  .popUp input:focus{
+    border-bottom-color:#bb140b;
+  }
+
+h1{
+    text-align: center;
+    margin: 20px 0;
+    font-family: pokemonFuente,Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color:hsl(60, 8%, 14%);
+}
+
+.Bienvenida{
+    display: grid;
+    place-content: center;
+    margin: 30px 0;
+}
+.reservacion > div{
+    display: flex;
+    flex-wrap: wrap;
+    gap:30px;
+    justify-content: center;
+    max-width: 800px;
+}
+.reservacion__descripcion-container{
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    margin-bottom: 30px;
+}
+.Bienvenida p{
+    width: 70vw;
+    border-bottom:2px solid #bb140b;
+    border-top:2px solid #bb140b;
+    padding: 20px;
+}
+.reservacion{
+    display: grid;
+    padding: 20px;
+    place-content: center;
+}
+.reservacion__container{
+    border: 1px solid #5e5e61;
+    background-repeat: no-repeat;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    width: 315px;
+    border-radius: 6px;
+}
+.reservacion-Ambato{
+    background-image:url("https://i.ibb.co/D1BfqbG/recepcion.jpg");    
+    background-position: top;
+}
+.reservacion-Quito{
+    background-image:url("https://i.ibb.co/s1vVdTS/Poke-Restaurante-Quito.jpg"); 
+    background-position: center;
+}
+.reservacion-Cuenca{
+    background-image: url("https://i.ibb.co/cCTfrqd/Poke-Restaurante-Cuenca.jpg");
+    background-position: right;
+}
+.reservacion-Baños{
+    background-image: url("https://i.ibb.co/TRWJBvy/Poke-Restaurante-Ba-os.jpg");
+    background-position: left;
+}
+
+.reservacion__title{
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+    font-family: pokemonFuente, Cochin, Georgia, Times, 'Times New Roman', serif, sans-serif;
+    font-size: 1.2em;
+    color: yellow;
+}
+.reservacion__descripcion{
+    margin-bottom: 20px;
+}
+
+.calendario-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form__calendario
+{
+    height: 340px;
+}
+table{
+    margin: 20px 0 12px;
+    width: 100%;
+    border-collapse:collapse;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: small;
+}
+th,td{
+    padding: 10px;
+    text-align: center;
+}
+
+th{
+    background-color: #bb140b;
+    color: white;
+    font-weight: bold;
+}
+td{
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.calendario__controles{
+    display: flex;
+    background-color: #5e5e61;
+    width: 90px;
+    height: 30px;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+    margin-bottom:40px;
+}
+.mesAnterior,.mesSiguiente{
+    cursor: pointer;
+}
+.opciones__container{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+.form__opcion{
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+    color: yellow;
+    font-weight: bold;
+}
+.form__opciones{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap:20px;
+}
+.form__seleccion{
+    width: 138px;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    text-align: center;
+    padding: 2px;
+    background-color: #bb140b;
+    color: white;
+}
+.form__boton-reservar{
+    margin: 25px 0 35px;
+    padding: 10px;
+    border-radius: 60%;
+    height: 86px;
+    width: 86px;
+    background:linear-gradient(to bottom, #f71b1b 50%, #000000 20%, #f7f7f7 60% );    outline: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Nunito Sans', sans-serif;
+    color: white;
+    border: 1px solid #000000;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+    font-size: 1em;
+}
+
+/* Estados */
+
+.mesAnterior, .mesSiguiente,.form__boton-reservar,.form__seleccion,.form__calendario td{
+    cursor:pointer;
+}
+.mesAnterior:hover{
+    transform: translateX(-2px);
+}
+.mesSiguiente:hover{
+    transform: translateX(2px);
+}
+td:hover{
+    background-color: teal;
+}
+.form__boton-reservar:hover{
+    background: linear-gradient(to bottom, #db8b00 50%, #000000 20%, #f7f7f7 60% );
+}
+.selected{
+    background-color: teal;
+}
+@media (min-width:800px){
+    .reservacion__container
+    {
+        width: 400px;
+    }
+    .reservacion > div{
+        max-width: 90vw;
+    }
+    .table{
+        font-size: medium;
+    }
+    .form__opciones{
+        gap:80px
+    }
+    .reservacion__descripcion-container{
+        height: 280px;
+    }
+}
