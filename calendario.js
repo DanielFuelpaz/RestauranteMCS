@@ -1,5 +1,27 @@
 let fechaActual = new Date();
-let fechaReserva;
+
+const heading1 = document.getElementById("titulo_Poke");
+const text = heading1.textContent;
+
+const colors = [
+  "red", "blue", "green", "orange", "purple", "brown",
+  "teal", "maroon", "navy", "olive", "fuchsia", "aqua",
+  "lime", "silver", "black", "gray", "rgb(204, 153, 102)"
+];
+
+heading1.innerHTML = "";
+
+for (let i = 0; i < text.length; i++) {
+  const letter = text[i];
+  const span = document.createElement("span");
+  span.textContent = letter;
+  span.style.color = colors[i % colors.length];
+
+  heading1.appendChild(span);
+}
+
+
+
 let calendario = document.getElementById('calendario');
 let calendario1 = document.getElementById('calendario1');
 let calendario2 = document.getElementById('calendario2');
@@ -451,168 +473,144 @@ function validarNumero(phoneValue) {
   return true;
 }
 
-btnConfirmar.addEventListener('click', async function () {
-  let cedulaCliente = 0;
-  let IDRestaurante = "";
-  let nombre = document.getElementById("nombre").value;
-  let apellido = document.getElementById("apellido").value;
-  email = document.getElementById("email").value;
-  let telefono = document.getElementById("telefono").value;
-  if (nombre !== "" && apellido !== "" && email !== "" && telefono !== "") {
-    if (!validarEmail(email)) {
-      alert("Ingresa un correo electrónico válido");
-      return;
-    }
-    if (!validarNumero(telefono)) {
-      alert("Ingresa un número de celular válido")
-      return;
-    }
-    const nuevoCliente = {
-      NOM_CLI: nombre,
-      APE_CLI: apellido,
-      TEL_CLI: telefono,
-      COR_CLI: email
-    };
-    let existe = false;
-    let reser = true;
-
-
-
-    const responser = await fetch('http://localhost:3000/clientes');
-    if (responser.ok) {
-      const responserData = await responser.json();
-      for (let i = 0; i < responserData.length; i++) {
-        let registro = responserData[i];
-        if (registro.COR_CLI == email) {
-          let resultado = confirm("¿Ya existe el usuario, deseas reservar con los datos del usuario ya existentes?");
-          existe = true;
-          if (resultado) {
-            reser = true;
-          } else {
-            reser = false;
-          }
-        }
-      }
-    } else {
-      throw new Error('Error al crear el cliente');
-    }
-    if (!existe) {
-      try {
-        const response = await fetch('http://localhost:3000/clientes', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(nuevoCliente)
-        });
-
-        if (response.ok) {
-          const data = await response.json();
-          alert('Cliente creado exitosamente');
-        } else {
-          throw new Error('Error al crear el cliente');
-        }
-      } catch (error) {
-        console.error(error);
-      }
-    }
-    if (reser) {
-      const response2 = await fetch('http://localhost:3000/clientes');
-      if (response2.ok) {
-        const response2Data = await response2.json();
-        for (let i = 0; i < response2Data.length; i++) {
-          let registro = response2Data[i];
-          if (registro.COR_CLI == email) {
-            cedulaCliente = registro.CED_CLI;
-            break;
-          }
-        }
-
-        const responseReser = await fetch('http://localhost:3000/reservas');
-        if (responseReser.ok) {
-          const responserRData = await responseReser.json();
-          for (let i = 0; i < responserRData.length; i++) {
-            let reserva = responserRData[i];
-            let fechaSinHoras = reserva.FEC_HOR_LLE.substring(0, reserva.FEC_HOR_LLE.indexOf('T'));
-
-            let numSimbolo = fechaReserva.indexOf('/')
-            let sub1 = fechaReserva.substring(0, fechaReserva.indexOf('/'));
-            let sub2 = fechaReserva.substring(fechaReserva.lastIndexOf('/') - 1, fechaReserva.length);
-            let fechaComparar;
-
-
-            if (fechaReserva.lastIndexOf('/') === numSimbolo + 2) {
-              fechaComparar = (sub1 + '/0' + sub2).replaceAll('/', '-');
-            } else {
-              fechaComparar = fechaReserva.replaceAll('/', '-');
-            }
-
-
-            if (cedulaCliente == reserva.CED_CLI_RES && fechaSinHoras == fechaSinHoras) {
-              alert("No puede reservar con su usuario en la misma fecha. Por favor, escriba otro usuario");
-              return;
-            }
-          }
-        }
-
-        const response3 = await fetch('http://localhost:3000/restaurantes');
-        if (response3.ok) {
-          const response3Data = await response3.json();
-          for (let i = 0; i < response3Data.length; i++) {
-            let registro2 = response3Data[i];
-            if (registro2.NOM_RES == nombreR) {
-              IDRestaurante = registro2.ID_RES;
-              break;
-            }
-          }
-          const nuevaReserva = {
-            FEC_HOR_RES: fechaActual,
-            FEC_HOR_LLE: fechaReservaParseada,
-            CAN_PER: numPersonas,
-            CED_CLI_RES: cedulaCliente,
-            ID_RES_PER: IDRestaurante
-          };
-
-          fetch('http://localhost:3000/reservas', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(nuevaReserva)
-          })
-            .then(function (response) {
-              if (response.ok) {
-                return response.json();
-              } else {
-                throw new Error('Error al crear la reserva');
-              }
-            })
-            .then(function (data) {
-              alert('Reserva creada con éxito');
-              popUpForm.style.display = 'none';
-              document.getElementById('nombre').value = " ";
-              document.getElementById('apellido').value = " ";
-              document.getElementById('email').value = " ";
-              document.getElementById('telefono').value = " ";
-            })
-            .catch(function (error) {
-              console.error(error);
-              alert('Error al crear la reserva');
-            });
-        } else {
-          console.error('Error:', response3.status);
-        }
-      } else {
-        console.error('Error:', response2.status);
-      }
-    } else {
-      alert("Ingresa otro correo")
-    }
-  } else {
-    alert("Ingrese todos los datos correctamente");
-    return;
-  }
-
+let btnCancelar = document.getElementById('btnCancelar');
+btnCancelar.addEventListener('click', async function(){
+  popUpForm.style.display='none';
 });
 
+  btnConfirmar.addEventListener('click', async function(){
+    let cedulaCliente=0;
+    let  IDRestaurante="";
+    let nombre= document.getElementById("nombre").value;
+    let apellido = document.getElementById("apellido").value;
+    email = document.getElementById("email").value;
+    let telefono = document.getElementById("telefono").value;
+    if(nombre!==""&&apellido!==""&&email!==""&&telefono!==""){
+      if(!validarEmail(email)){
+        alert("Ingresa un correo electrónico válido");
+        return;
+      }
+      if(!validarNumero(telefono)){
+        alert("Ingresa un número de celular válido")
+        return;
+      }
+      const nuevoCliente = {
+        NOM_CLI: nombre,
+        APE_CLI: apellido,
+        TEL_CLI: telefono,
+        COR_CLI:email
+      };
+      let existe=false;
+      let reser=true;
+      const responser = await fetch('http://localhost:3000/clientes');
+          if (responser.ok) {
+            const responserData = await responser.json();
+            for (let i = 0; i < responserData.length; i++) {
+              let registro = responserData[i];
+              if (registro.COR_CLI == email) {
+                let resultado = confirm("¿Ya existe el usuario, deseas reservar con los datos del usuario ya existentes?");
+                existe=true;
+                if (resultado) {
+                  reser=true;
+                } else {
+                  reser=false; 
+                }
+              }
+            }
+          } else {
+            throw new Error('Error al crear el cliente');
+          }
+          if(!existe){
+            try {
+                    const response = await fetch('http://localhost:3000/clientes', {
+                      method: 'POST',
+                      headers: {
+                        'Content-Type': 'application/json'
+                      },
+                      body: JSON.stringify(nuevoCliente)
+                    });
+                
+                    if (response.ok) {
+                      const data = await response.json();
+                      alert('Cliente creado exitosamente');
+                    } else {
+                      throw new Error('Error al crear el cliente');
+                    }
+                    }catch (error) {
+                      console.error(error);
+                    }
+          }
+            if(reser){
+                    const response2 = await fetch('http://localhost:3000/clientes');
+                    if (response2.ok) {
+                      const response2Data = await response2.json();
+                      for (let i = 0; i < response2Data.length; i++) {
+                        let registro = response2Data[i];
+                        if (registro.COR_CLI == email) {
+                          cedulaCliente = registro.CED_CLI;
+                          break;
+                        }
+                      }
+              
+                      const response3 = await fetch('http://localhost:3000/restaurantes');
+                      if (response3.ok) {
+                        const response3Data = await response3.json();
+                        for (let i = 0; i < response3Data.length; i++) {
+                          let registro2 = response3Data[i];
+                          if (registro2.NOM_RES == nombreR) {                            
+                            IDRestaurante = registro2.ID_RES;
+                            break;
+                          }
+                        }
+                            const nuevaReserva = {
+                          FEC_HOR_RES: fechaActual,
+                          FEC_HOR_LLE: fechaReservaParseada,
+                          CAN_PER:numPersonas,
+                          CED_CLI_RES:cedulaCliente, 
+                          ID_RES_PER: IDRestaurante
+                        };
+          
+                        fetch('http://localhost:3000/reservas', {
+                          method: 'POST',
+                          headers: {
+                            'Content-Type': 'application/json'
+                          },
+                          body: JSON.stringify(nuevaReserva)
+                        })
+                          .then(function(response) {
+                            if (response.ok) {
+                              return response.json();
+                            } else {
+                              throw new Error('Error al crear la reserva');
+                            }
+                          })
+                          .then(function(data) {
+                            alert('Reserva creada con éxito');
+                            popUpForm.style.display='none';
+                            document.getElementById('nombre').value=" ";
+                            document.getElementById('apellido').value=" ";
+                            document.getElementById('email').value=" ";
+                            document.getElementById('telefono').value=" ";
+                          })
+                          .catch(function(error) {
+                            console.error(error);
+                            alert('Error al crear la reserva');
+                          });     
+                      } else {
+                        console.error('Error:', response3.status);
+                      }
+                    } else {
+                      console.error('Error:', response2.status);
+                    }
+                   }else
+                  {
+                    alert("Ingresa otro correo")
+                  }
+                }else{
+                  alert("Ingrese todos los datos correctamente");
+                  return;
+              }
+        
+      });
+  
   //Mejorar como se muestra el mensaje de exito o de fracaso.
