@@ -50,13 +50,10 @@ const knex = require('knex')({
     const leerRestaurantes=()=>{
         return knex('restaurantes').select();
     };
-    
-    // const leerClienteActual=(email)=>{
-    //     return knex('clientes').select().where('COR_CLI',email);
-    // };
-    // const leerRestaurante=(nombre)=>{
-    //     return knex('restaurantes').select().where('NOM_RES',nombre);
-    // };
+    const leerReservas=()=>{
+        return knex('reservas').select();
+    };
+
 
  return{
     crearCiudad,
@@ -64,7 +61,8 @@ const knex = require('knex')({
     crearCliente,
     leerClientes,
     leerRestaurantes,
-    crearReserva
+    crearReserva,
+    leerReservas
 };
 };
  module.exports ={
