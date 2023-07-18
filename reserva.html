@@ -8,337 +8,399 @@
     <link rel="stylesheet" href="reserva.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;500;600;700&family=Roboto:ital,wght@0,300;0,500;0,700;1,100&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;500;600;700&family=Roboto:ital,wght@0,300;0,500;0,700;1,100&display=swap"
+        rel="stylesheet">
 
-    <title>Haz una reservación</title> 
+    <title>Haz una reservación</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-      
+
 </head>
 <script>
     window.addEventListener('mouseover', initLandbot, { once: true });
     window.addEventListener('touchstart', initLandbot, { once: true });
     var myLandbot;
     function initLandbot() {
-      if (!myLandbot) {
-        var s = document.createElement('script');s.type = 'text/javascript';s.async = true;
-        s.addEventListener('load', function() {
-          var myLandbot = new Landbot.Livechat({
-            configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-1656775-6R18UULU3YIF2YJD/index.json',
-          });
-        });
-        s.src = 'https://cdn.landbot.io/landbot-3/landbot-3.0.0.js';
-        var x = document.getElementsByTagName('script')[0];
-        x.parentNode.insertBefore(s, x);
-      }
+        if (!myLandbot) {
+            var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true;
+            s.addEventListener('load', function () {
+                var myLandbot = new Landbot.Livechat({
+                    configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-1656775-6R18UULU3YIF2YJD/index.json',
+                });
+            });
+            s.src = 'https://cdn.landbot.io/landbot-3/landbot-3.0.0.js';
+            var x = document.getElementsByTagName('script')[0];
+            x.parentNode.insertBefore(s, x);
+        }
     }
-    </script>
+</script>
+
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #bb140b">
-          <a class="navbar-brand d-lg-none" href="index.html">PikaBites</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample08"
-            aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-    
-          <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="reserva.html">Reserva</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="galeria.html">Galeria</a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="index.html"><img src="blob.svg" width="30" height="30" alt="" />
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="menu.html">Menu</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="informacionempre.html">Nosotros</a>
-              </li>
-            </ul>
-          </div>
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #bb140b;
+        color: #f8f8f8;
+        font-weight: bold;">
+            <a class="navbar-brand d-lg-none" href="index.html">PikaBites</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample08"
+                aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="reserva.html">Reserva</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="menu.html">Menu</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html"><img src="blob.svg" width="30" height="30" alt="" />
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="galeria.html">Galeria</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="informacionempre.html">Nosotros</a>
+                    </li>
+                </ul>
+            </div>
         </nav>
-      </header>
+    </header>
     <main>
         <h1 id="titulo_Poke">Poke reservación</h1>
         <section class="Bienvenida">
             <p>💡 En la página de PokeReserva en Línea, podrás explorar las opciones de restaurantes para reservar tu
-                próxima visita. </br></br>Solo necesitas ingresar la fecha y hora de tu reserva, así como el número de comensales
-                en tu grupo.</br> </br>Nuestro amable personal estará listo para recibirte y brindarte una experiencia de comida
+                próxima visita. </br></br>Solo necesitas ingresar la fecha y hora de tu reserva, así como el número de
+                comensales
+                en tu grupo.</br> </br>Nuestro amable personal estará listo para recibirte y brindarte una experiencia
+                de comida
                 pokemon
                 inolvidable. 💡</p>
-                <div class="botonesSucursales">
-                    <button class="toggle-sucursales" id="sucursalCiudadBoton">
-                        Ver la sucursal de mi ciudad
-                    </button>
-                    <button class="toggle-sucursales" id="sucursalesBoton">
-                        Ver todas las sucursales
-                    </button>
-                </div>
-                <p id="mensajeNo">¡No tenemos una pokeSucursal en tu ciudad, pero muy pronto lo haremos!</p>
-            </section>
+            <div class="botonesSucursales">
+                <button class="toggle-sucursales" id="sucursalCiudadBoton">
+                    Ver la sucursal de mi ciudad
+                </button>
+                <button class="toggle-sucursales" id="sucursalesBoton">
+                    Ver todas las sucursales
+                </button>
+            </div>
+            <p id="mensajeNo">¡No tenemos una pokeSucursal en tu ciudad, pero muy pronto lo haremos!</p>
+        </section>
         <section class="reservacion" id="sucursales">
 
             <div>
                 <div class="reservacion__container reservacion-Ambato" id="Ambato">
                     <h2 class="reservacion__title" id="pokeAmbato">PokeRestaurante Ambato</h2>
-                <div class="reservacion__descripcion-container">
-                    <p class="reservacion__descripcion">Ubicado en la encantadora ciudad de Ambato, Ecuador, nuestro restaurante es el destino ideal para los amantes de Pokémon que buscan una comida deliciosa en un entorno divertido y acogedor.</p>
-                    <p class="reservacion__descripcion">¡Ven y únete a nosotros en el Restaurante Principal Pokémon en Ambato, donde la aventura culinaria y la magia de Pokémon se unen para crear una experiencia única que nunca olvidarás!
+                    <div class="reservacion__descripcion-container">
+                        <p class="reservacion__descripcion">Ubicado en la encantadora ciudad de Ambato, Ecuador, nuestro
+                            restaurante es el destino ideal para los amantes de Pokémon que buscan una comida deliciosa
+                            en un entorno divertido y acogedor.</p>
+                        <p class="reservacion__descripcion">¡Ven y únete a nosotros en el Restaurante Principal Pokémon
+                            en Ambato, donde la aventura culinaria y la magia de Pokémon se unen para crear una
+                            experiencia única que nunca olvidarás!
+                    </div>
+                    </p>
+                    <form class="reservacion__form">
+                        <div class="calendario-container">
+                            <div id="calendario" class="form__calendario">
+                            </div>
+                            <div class="calendario__controles">
+                                <div id="1" class="mesAnterior" onclick="mostrarMesAnterior()">&#10094;</div>
+                                <div id="1" class="mesSiguiente" onclick="mostrarMesSiguiente()">&#10095;</div>
+                            </div>
+                        </div>
+                        <div class="form__opciones">
+                            <div class="opciones__container">
+                                <label class="form__opcion personas">Personas</label>
+                                <select class="form__seleccion" id="selectPersonas1">
+                                    <option id="1persona" value="1 persona">1 persona</option>
+                                    <option id="2persona" value="2 personas"> 2 personas</option>
+                                    <option id="3persona" value="3-personas"> 3 personas</option>
+                                    <option id="4persona" value="4 personas"> 4 personas</option>
+                                    <option id="5persona" value="5 personas"> 5 personas</option>
+                                    <option id="6persona" value="6 personas"> 6 personas</option>
+                                    <option id="7persona" value="7 personas"> 7 personas</option>
+                                    <option id="8persona" value="8 personas">8 personas</option>
+                                    <option id="9persona" value="9 personas">9 personas</option>
+                                    <option id="10persona" value="10 personas">10 personas</option>
+                                    <option id="+10persona" value="+10 personas">+10 personas</option>
+                                    <option id="Todopersona" value="Todo el restaurante">Todo el restaurante</option>
+                                </select>
+                            </div>
+                            <div class="opciones__container">
+                                <label class="form__opcion hora">Hora</label>
+                                <select class="form__seleccion" id="selectHora1">
+                                    <option id="9am" value="9:00 am">9:00 am</option>
+                                    <option id="10am" value="10:00 am">10:00 am</option>
+                                    <option id="11am" value="11:00 am">11:00 am</option>
+                                    <option id="12am" value="12:00 am">12:00 am</option>
+                                    <option id="13pm" value="13:00 am">13:00 pm</option>
+                                    <option id="14pm" value="14:00 am">14:00 pm</option>
+                                    <option id="15pm" value="15:00 am">15:00 pm</option>
+                                    <option id="16pm" value="16:00 am">16:00 pm</option>
+                                    <option id="17pm" value="17:00 am">17:00 pm</option>
+                                    <option id="18pm" value="18:00 am">18:00 pm</option>
+                                    <option id="20pm" value="19:00 am">19:00 pm</option>
+                                    <option id="21pm" value="20:00 am">20:00 pm</option>
+                                    <option id="22pm" value="21:00 am">21:00 pm</option>
+                                </select>
+                            </div>
+                        </div>
+                        <input id="reservarbtn1" class="form__boton-reservar" type="button" value="Reservar">
+                    </form>
                 </div>
-                </p>
-                <form class="reservacion__form">
-                    <div class="calendario-container">
-                        <div id="calendario" class="form__calendario">
-                        </div>
-                        <div class="calendario__controles">
-                            <div id="1" class="mesAnterior" onclick="mostrarMesAnterior()">&#10094;</div>
-                            <div id="1" class="mesSiguiente" onclick="mostrarMesSiguiente()">&#10095;</div>
-                        </div>
+                <div class="reservacion__container reservacion-Quito" id="Quito">
+                    <h2 class="reservacion__title" id="pokeQuito">PokeRestaurante Quito</h2>
+                    <div class="reservacion__descripcion-container">
+                        <p class="reservacion__descripcion">Ubicado en la encantadora ciudad de Quito, Ecuador, nuestro
+                            restaurante es el destino ideal para los amantes de Pokémon que buscan una comida deliciosa
+                            en un entorno divertido y acogedor.</p>
+                        <p class="reservacion__descripcion">¡Ven y únete a nosotros en esta sucursal del
+                            pokeRestaurante, donde la aventura culinaria y la magia de Pokémon se unen para crear una
+                            experiencia única que nunca olvidarás!
                     </div>
-                    <div class="form__opciones">
-                        <div class="opciones__container">
-                            <label class="form__opcion personas">Personas</label>
-                            <select class="form__seleccion" id="selectPersonas1">
-                                <option id="1persona" value="1 persona">1 persona</option>
-                                <option id="2persona" value="2 personas"> 2 personas</option>
-                                <option id="3persona" value="3-personas"> 3 personas</option>
-                                <option id="4persona" value="4 personas"> 4 personas</option>
-                                <option id="5persona" value="5 personas"> 5 personas</option>
-                                <option id="6persona" value="6 personas"> 6 personas</option>
-                                <option id="7persona" value="7 personas"> 7 personas</option>
-                                <option id="8persona" value="8 personas">8 personas</option>
-                                <option id="9persona" value="9 personas">9 personas</option>
-                                <option id="10persona" value="10 personas">10 personas</option>
-                                <option id="+10persona" value="+10 personas">+10 personas</option>
-                                <option id="Todopersona" value="Todo el restaurante">Todo el restaurante</option>
-                            </select>
+                    </p>
+                    <form class="reservacion__form">
+                        <div class="calendario-container">
+                            <div id="calendario1" class="form__calendario">
+                            </div>
+                            <div class="calendario__controles">
+                                <div id="2" class="mesAnterior" onclick="mostrarMesAnterior()">&#10094;</div>
+                                <div id="2" class="mesSiguiente" onclick="mostrarMesSiguiente()">&#10095;</div>
+                            </div>
                         </div>
-                        <div class="opciones__container">
-                            <label class="form__opcion hora">Hora</label>
-                            <select class="form__seleccion" id="selectHora1">
-                                <option id="9am" value="9:00 am">9:00 am</option>
-                                <option id="10am" value="10:00 am">10:00 am</option>
-                                <option id="11am" value="11:00 am">11:00 am</option>
-                                <option id="12am" value="12:00 am">12:00 am</option>
-                                <option id="13pm" value="13:00 am">13:00 pm</option>
-                                <option id="14pm" value="14:00 am">14:00 pm</option>
-                                <option id="15pm" value="15:00 am">15:00 pm</option>
-                                <option id="16pm" value="16:00 am">16:00 pm</option>
-                                <option id="17pm" value="17:00 am">17:00 pm</option>
-                                <option id="18pm" value="18:00 am">18:00 pm</option>
-                                <option id="20pm" value="19:00 am">19:00 pm</option>
-                                <option id="21pm" value="20:00 am">20:00 pm</option>
-                                <option id="22pm" value="21:00 am">21:00 pm</option>
-                            </select>
+                        <div class="form__opciones">
+                            <div class="opciones__container">
+                                <label class="form__opcion personas">Personas</label>
+                                <select class="form__seleccion" id="selectPersonas2">
+                                    <option id="1persona" value="1 persona">1 persona</option>
+                                    <option id="2persona" value="2 personas"> 2 personas</option>
+                                    <option id="3persona" value="3-personas"> 3 personas</option>
+                                    <option id="4persona" value="4 personas"> 4 personas</option>
+                                    <option id="5persona" value="5 personas"> 5 personas</option>
+                                    <option id="6persona" value="6 personas"> 6 personas</option>
+                                    <option id="7persona" value="7 personas"> 7 personas</option>
+                                    <option id="8persona" value="8 personas">8 personas</option>
+                                    <option id="9persona" value="9 personas">9 personas</option>
+                                    <option id="10persona" value="10 personas">10 personas</option>
+                                    <option id="+10persona" value="+10 personas">+10 personas</option>
+                                    <option id="Todopersona" value="Todo el restaurante">Todo el restaurante</option>
+                                </select>
+                            </div>
+                            <div class="opciones__container">
+                                <label class="form__opcion hora">Hora</label>
+                                <select class="form__seleccion" id="selectHora2">
+                                    <option id="9am" value="9:00 am">9:00 am</option>
+                                    <option id="10am" value="10:00 am">10:00 am</option>
+                                    <option id="11am" value="11:00 am">11:00 am</option>
+                                    <option id="12am" value="12:00 am">12:00 am</option>
+                                    <option id="13pm" value="13:00 am">13:00 pm</option>
+                                    <option id="14pm" value="14:00 am">14:00 pm</option>
+                                    <option id="15pm" value="15:00 am">15:00 pm</option>
+                                    <option id="16pm" value="16:00 am">16:00 pm</option>
+                                    <option id="17pm" value="17:00 am">17:00 pm</option>
+                                    <option id="18pm" value="18:00 am">18:00 pm</option>
+                                    <option id="20pm" value="19:00 am">19:00 pm</option>
+                                    <option id="21pm" value="20:00 am">20:00 pm</option>
+                                    <option id="22pm" value="21:00 am">21:00 pm</option>
+                                </select>
+                            </div>
                         </div>
-                        </div>
-                <input id="reservarbtn1" class="form__boton-reservar" type="button" value="Reservar">
-                </form>
-            </div>
-            <div class="reservacion__container reservacion-Quito" id="Quito">
-                <h2 class="reservacion__title" id="pokeQuito">PokeRestaurante Quito</h2>
-                <div class="reservacion__descripcion-container">
-                    <p class="reservacion__descripcion">Ubicado en la encantadora ciudad de Quito, Ecuador, nuestro restaurante es el destino ideal para los amantes de Pokémon que buscan una comida deliciosa en un entorno divertido y acogedor.</p>
-                    <p class="reservacion__descripcion">¡Ven y únete a nosotros en esta sucursal del pokeRestaurante, donde la aventura culinaria y la magia de Pokémon se unen para crear una experiencia única que nunca olvidarás!
+                        <input id="reservarbtn2" class="form__boton-reservar" type="button" value="Reservar">
+                    </form>
                 </div>
-                </p>
-                <form class="reservacion__form">
-                    <div class="calendario-container">
-                        <div id="calendario1" class="form__calendario">
-                        </div>
-                        <div class="calendario__controles">
-                            <div id="2" class="mesAnterior" onclick="mostrarMesAnterior()">&#10094;</div>
-                            <div id="2" class="mesSiguiente" onclick="mostrarMesSiguiente()">&#10095;</div>
-                        </div>
+                <div class="reservacion__container reservacion-Cuenca" id="Cuenca">
+                    <h2 class="reservacion__title" id="pokeCuenca">PokeRestaurante Cuenca</h2>
+                    <div class="reservacion__descripcion-container">
+                        <p class="reservacion__descripcion">Ubicado en la encantadora ciudad de Cuenca, Ecuador, nuestro
+                            restaurante es el destino ideal para los amantes de Pokémon que buscan una comida deliciosa
+                            en un entorno divertido y acogedor.</p>
+                        <p class="reservacion__descripcion">¡Ven y únete a nosotros en esta sucursal del PokeRestaurante
+                            en Cuenca, donde la aventura culinaria y la magia de Pokémon se unen para crear una
+                            experiencia única que nunca olvidarás!
                     </div>
-                    <div class="form__opciones">
-                        <div class="opciones__container">
-                            <label class="form__opcion personas">Personas</label>
-                            <select class="form__seleccion" id="selectPersonas2">
-                                <option id="1persona" value="1 persona">1 persona</option>
-                                <option id="2persona" value="2 personas"> 2 personas</option>
-                                <option id="3persona" value="3-personas"> 3 personas</option>
-                                <option id="4persona" value="4 personas"> 4 personas</option>
-                                <option id="5persona" value="5 personas"> 5 personas</option>
-                                <option id="6persona" value="6 personas"> 6 personas</option>
-                                <option id="7persona" value="7 personas"> 7 personas</option>
-                                <option id="8persona" value="8 personas">8 personas</option>
-                                <option id="9persona" value="9 personas">9 personas</option>
-                                <option id="10persona" value="10 personas">10 personas</option>
-                                <option id="+10persona" value="+10 personas">+10 personas</option>
-                                <option id="Todopersona" value="Todo el restaurante">Todo el restaurante</option>
-                            </select>
+                    </p>
+                    <form class="reservacion__form">
+                        <div class="calendario-container">
+                            <div id="calendario2" class="form__calendario">
+                            </div>
+                            <div class="calendario__controles">
+                                <div id="3" class="mesAnterior" onclick="mostrarMesAnterior()">&#10094;</div>
+                                <div id="3" class="mesSiguiente" onclick="mostrarMesSiguiente()">&#10095;</div>
+                            </div>
                         </div>
-                        <div class="opciones__container">
-                            <label class="form__opcion hora">Hora</label>
-                            <select class="form__seleccion" id="selectHora2">
-                                <option id="9am" value="9:00 am">9:00 am</option>
-                                <option id="10am" value="10:00 am">10:00 am</option>
-                                <option id="11am" value="11:00 am">11:00 am</option>
-                                <option id="12am" value="12:00 am">12:00 am</option>
-                                <option id="13pm" value="13:00 am">13:00 pm</option>
-                                <option id="14pm" value="14:00 am">14:00 pm</option>
-                                <option id="15pm" value="15:00 am">15:00 pm</option>
-                                <option id="16pm" value="16:00 am">16:00 pm</option>
-                                <option id="17pm" value="17:00 am">17:00 pm</option>
-                                <option id="18pm" value="18:00 am">18:00 pm</option>
-                                <option id="20pm" value="19:00 am">19:00 pm</option>
-                                <option id="21pm" value="20:00 am">20:00 pm</option>
-                                <option id="22pm" value="21:00 am">21:00 pm</option>
-                            </select>
+                        <div class="form__opciones">
+                            <div class="opciones__container">
+                                <label class="form__opcion personas">Personas</label>
+                                <select class="form__seleccion" id="selectPersonas3">
+                                    <option id="1persona" value="1 persona">1 persona</option>
+                                    <option id="2persona" value="2 personas"> 2 personas</option>
+                                    <option id="3persona" value="3-personas"> 3 personas</option>
+                                    <option id="4persona" value="4 personas"> 4 personas</option>
+                                    <option id="5persona" value="5 personas"> 5 personas</option>
+                                    <option id="6persona" value="6 personas"> 6 personas</option>
+                                    <option id="7persona" value="7 personas"> 7 personas</option>
+                                    <option id="8persona" value="8 personas">8 personas</option>
+                                    <option id="9persona" value="9 personas">9 personas</option>
+                                    <option id="10persona" value="10 personas">10 personas</option>
+                                    <option id="+10persona" value="+10 personas">+10 personas</option>
+                                    <option id="Todopersona" value="Todo el restaurante">Todo el restaurante</option>
+                                </select>
+                            </div>
+                            <div class="opciones__container">
+                                <label class="form__opcion hora">Hora</label>
+                                <select class="form__seleccion" id="selectHora3">
+                                    <option id="9am" value="9:00 am">9:00 am</option>
+                                    <option id="10am" value="10:00 am">10:00 am</option>
+                                    <option id="11am" value="11:00 am">11:00 am</option>
+                                    <option id="12am" value="12:00 am">12:00 am</option>
+                                    <option id="13pm" value="13:00 am">13:00 pm</option>
+                                    <option id="14pm" value="14:00 am">14:00 pm</option>
+                                    <option id="15pm" value="15:00 am">15:00 pm</option>
+                                    <option id="16pm" value="16:00 am">16:00 pm</option>
+                                    <option id="17pm" value="17:00 am">17:00 pm</option>
+                                    <option id="18pm" value="18:00 am">18:00 pm</option>
+                                    <option id="20pm" value="19:00 am">19:00 pm</option>
+                                    <option id="21pm" value="20:00 am">20:00 pm</option>
+                                    <option id="22pm" value="21:00 am">21:00 pm</option>
+                                </select>
+                            </div>
                         </div>
+                        <input id="reservarbtn3" class="form__boton-reservar" type="button" value="Reservar">
+                    </form>
+                </div>
+                <div class="reservacion__container reservacion-Baños" id="Banios">
+                    <h2 class="reservacion__title" id="pokeBanios">PokeRestaurante Baños</h2>
+                    <div class="reservacion__descripcion-container">
+                        <p class="reservacion__descripcion">Ubicado en la encantadora ciudad de Baños de Agua Santa,
+                            Ecuador, nuestro restaurante es el destino ideal para los amantes de Pokémon que buscan una
+                            comida deliciosa en un entorno divertido y acogedor.</p>
+                        <p class="reservacion__descripcion">¡Ven y únete a nosotros en la sucursal del PokeRestaurante
+                            en Baños, donde la aventura culinaria y la magia de Pokémon se unen para crear una
+                            experiencia única que nunca olvidarás!
+                    </div>
+                    </p>
+                    <form class="reservacion__form">
+                        <div class="calendario-container">
+                            <div id="calendario3" class="form__calendario">
+                            </div>
+                            <div class="calendario__controles">
+                                <div id="4" class="mesAnterior" onclick="mostrarMesAnterior()">&#10094;</div>
+                                <div id="4" class="mesSiguiente" onclick="mostrarMesSiguiente()">&#10095;</div>
+                            </div>
                         </div>
-                <input id="reservarbtn2" class="form__boton-reservar" type="button" value="Reservar">
-                </form>
+                        <div class="form__opciones">
+                            <div class="opciones__container">
+                                <label class="form__opcion personas">Personas</label>
+                                <select class="form__seleccion" id="selectPersonas4">
+                                    <option id="1persona" value="1 persona">1 persona</option>
+                                    <option id="2persona" value="2 personas"> 2 personas</option>
+                                    <option id="3persona" value="3-personas"> 3 personas</option>
+                                    <option id="4persona" value="4 personas"> 4 personas</option>
+                                    <option id="5persona" value="5 personas"> 5 personas</option>
+                                    <option id="6persona" value="6 personas"> 6 personas</option>
+                                    <option id="7persona" value="7 personas"> 7 personas</option>
+                                    <option id="8persona" value="8 personas">8 personas</option>
+                                    <option id="9persona" value="9 personas">9 personas</option>
+                                    <option id="10persona" value="10 personas">10 personas</option>
+                                    <option id="+10persona" value="+10 personas">+10 personas</option>
+                                    <option id="Todopersona" value="Todo el restaurante">Todo el restaurante</option>
+                                </select>
+                            </div>
+                            <div class="opciones__container">
+                                <label class="form__opcion hora">Hora</label>
+                                <select class="form__seleccion" id="selectHora4">
+                                    <option id="9am" value="9:00 am">9:00 am</option>
+                                    <option id="10am" value="10:00 am">10:00 am</option>
+                                    <option id="11am" value="11:00 am">11:00 am</option>
+                                    <option id="12am" value="12:00 am">12:00 am</option>
+                                    <option id="13pm" value="13:00 am">13:00 pm</option>
+                                    <option id="14pm" value="14:00 am">14:00 pm</option>
+                                    <option id="15pm" value="15:00 am">15:00 pm</option>
+                                    <option id="16pm" value="16:00 am">16:00 pm</option>
+                                    <option id="17pm" value="17:00 am">17:00 pm</option>
+                                    <option id="18pm" value="18:00 am">18:00 pm</option>
+                                    <option id="20pm" value="19:00 am">19:00 pm</option>
+                                    <option id="21pm" value="20:00 am">20:00 pm</option>
+                                    <option id="22pm" value="21:00 am">21:00 pm</option>
+                                </select>
+                            </div>
+                        </div>
+                        <input id="reservarbtn4" class="form__boton-reservar" type="button" value="Reservar">
+                    </form>
+                </div>
             </div>
-            <div class="reservacion__container reservacion-Cuenca" id="Cuenca">
-                <h2 class="reservacion__title" id="pokeCuenca">PokeRestaurante Cuenca</h2>
-                <div class="reservacion__descripcion-container">
-                    <p class="reservacion__descripcion">Ubicado en la encantadora ciudad de Cuenca, Ecuador, nuestro restaurante es el destino ideal para los amantes de Pokémon que buscan una comida deliciosa en un entorno divertido y acogedor.</p>
-                    <p class="reservacion__descripcion">¡Ven y únete a nosotros en esta sucursal del PokeRestaurante en Cuenca, donde la aventura culinaria y la magia de Pokémon se unen para crear una experiencia única que nunca olvidarás!
-                    </div>
-                </p>
-                <form class="reservacion__form">
-                    <div class="calendario-container">
-                        <div id="calendario2" class="form__calendario">
-                        </div>
-                        <div class="calendario__controles">
-                            <div id="3" class="mesAnterior" onclick="mostrarMesAnterior()">&#10094;</div>
-                            <div id="3" class="mesSiguiente" onclick="mostrarMesSiguiente()">&#10095;</div>
-                        </div>
-                    </div>
-                    <div class="form__opciones">
-                        <div class="opciones__container">
-                            <label class="form__opcion personas">Personas</label>
-                            <select class="form__seleccion" id="selectPersonas3">
-                                <option id="1persona" value="1 persona">1 persona</option>
-                                <option id="2persona" value="2 personas"> 2 personas</option>
-                                <option id="3persona" value="3-personas"> 3 personas</option>
-                                <option id="4persona" value="4 personas"> 4 personas</option>
-                                <option id="5persona" value="5 personas"> 5 personas</option>
-                                <option id="6persona" value="6 personas"> 6 personas</option>
-                                <option id="7persona" value="7 personas"> 7 personas</option>
-                                <option id="8persona" value="8 personas">8 personas</option>
-                                <option id="9persona" value="9 personas">9 personas</option>
-                                <option id="10persona" value="10 personas">10 personas</option>
-                                <option id="+10persona" value="+10 personas">+10 personas</option>
-                                <option id="Todopersona" value="Todo el restaurante">Todo el restaurante</option>
-                            </select>
-                        </div>
-                        <div class="opciones__container">
-                            <label class="form__opcion hora">Hora</label>
-                            <select class="form__seleccion" id="selectHora3">
-                                <option id="9am" value="9:00 am">9:00 am</option>
-                                <option id="10am" value="10:00 am">10:00 am</option>
-                                <option id="11am" value="11:00 am">11:00 am</option>
-                                <option id="12am" value="12:00 am">12:00 am</option>
-                                <option id="13pm" value="13:00 am">13:00 pm</option>
-                                <option id="14pm" value="14:00 am">14:00 pm</option>
-                                <option id="15pm" value="15:00 am">15:00 pm</option>
-                                <option id="16pm" value="16:00 am">16:00 pm</option>
-                                <option id="17pm" value="17:00 am">17:00 pm</option>
-                                <option id="18pm" value="18:00 am">18:00 pm</option>
-                                <option id="20pm" value="19:00 am">19:00 pm</option>
-                                <option id="21pm" value="20:00 am">20:00 pm</option>
-                                <option id="22pm" value="21:00 am">21:00 pm</option>
-                            </select>
-                        </div>
-                        </div>
-                <input id="reservarbtn3" class="form__boton-reservar" type="button" value="Reservar">
-                </form>
-            </div>
-            <div class="reservacion__container reservacion-Baños" id="Banios">
-                <h2 class="reservacion__title" id="pokeBanios">PokeRestaurante Baños</h2>
-                <div class="reservacion__descripcion-container">
-                    <p class="reservacion__descripcion">Ubicado en la encantadora ciudad de Baños de Agua Santa, Ecuador, nuestro restaurante es el destino ideal para los amantes de Pokémon que buscan una comida deliciosa en un entorno divertido y acogedor.</p>
-                    <p class="reservacion__descripcion">¡Ven y únete a nosotros en la sucursal del PokeRestaurante en Baños, donde la aventura culinaria y la magia de Pokémon se unen para crear una experiencia única que nunca olvidarás!
-                    </div>
-                </p>
-                <form class="reservacion__form">
-                    <div class="calendario-container">
-                        <div id="calendario3" class="form__calendario">
-                        </div>
-                        <div class="calendario__controles">
-                            <div id="4" class="mesAnterior" onclick="mostrarMesAnterior()">&#10094;</div>
-                            <div id="4" class="mesSiguiente" onclick="mostrarMesSiguiente()">&#10095;</div>
-                        </div>
-                    </div>
-                    <div class="form__opciones">
-                        <div class="opciones__container">
-                            <label class="form__opcion personas">Personas</label>
-                            <select class="form__seleccion" id="selectPersonas4">
-                                <option id="1persona" value="1 persona">1 persona</option>
-                                <option id="2persona" value="2 personas"> 2 personas</option>
-                                <option id="3persona" value="3-personas"> 3 personas</option>
-                                <option id="4persona" value="4 personas"> 4 personas</option>
-                                <option id="5persona" value="5 personas"> 5 personas</option>
-                                <option id="6persona" value="6 personas"> 6 personas</option>
-                                <option id="7persona" value="7 personas"> 7 personas</option>
-                                <option id="8persona" value="8 personas">8 personas</option>
-                                <option id="9persona" value="9 personas">9 personas</option>
-                                <option id="10persona" value="10 personas">10 personas</option>
-                                <option id="+10persona" value="+10 personas">+10 personas</option>
-                                <option id="Todopersona" value="Todo el restaurante">Todo el restaurante</option>
-                            </select>
-                        </div>
-                        <div class="opciones__container">
-                            <label class="form__opcion hora">Hora</label>
-                            <select class="form__seleccion" id="selectHora4">
-                                <option id="9am" value="9:00 am">9:00 am</option>
-                                <option id="10am" value="10:00 am">10:00 am</option>
-                                <option id="11am" value="11:00 am">11:00 am</option>
-                                <option id="12am" value="12:00 am">12:00 am</option>
-                                <option id="13pm" value="13:00 am">13:00 pm</option>
-                                <option id="14pm" value="14:00 am">14:00 pm</option>
-                                <option id="15pm" value="15:00 am">15:00 pm</option>
-                                <option id="16pm" value="16:00 am">16:00 pm</option>
-                                <option id="17pm" value="17:00 am">17:00 pm</option>
-                                <option id="18pm" value="18:00 am">18:00 pm</option>
-                                <option id="20pm" value="19:00 am">19:00 pm</option>
-                                <option id="21pm" value="20:00 am">20:00 pm</option>
-                                <option id="22pm" value="21:00 am">21:00 pm</option>
-                            </select>
-                        </div>
-                        </div>
-                <input id="reservarbtn4" class="form__boton-reservar" type="button" value="Reservar">
-                </form>
-            </div>
-        </div>
         </section>
         <section class="popUpSection" id="popUpsection">
             <div id="popUp" class="popUp">
                 <h3>Formulario Cliente</h3>
                 <p>LLene sus datos para poder reservar con éxito</p>
-        <form id="formulario">
-          <label for="nombre">Nombre:</label>
-          <input type="text" id="nombre" name="nombre" oninput="validarTexto(this)" required>
-          
-          <label for="apellido">Apellido:</label>
-          <input type="text" id="apellido" name="apellido" oninput="validarTexto(this)" required>
+                <form id="formulario">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" oninput="validarTexto(this)" required>
 
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" placeholder="badilleins@gmail.com" required>
-         
-          <label for="telefono">Telefono:</label>
-          <input type="number" id="telefono" name="telefono" required>
-            <div class="formButtons">
-            <button type="button" id="btnConfirmar">Confirmar</button>
-            <button type="button" id="btnCancelar">Cancelar</button>
-        </div>
-        </form>
-    </div>
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" name="apellido" oninput="validarTexto(this)" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="badilleins@gmail.com" required>
+
+                    <label for="telefono">Telefono:</label>
+                    <input type="number" id="telefono" name="telefono" required>
+                    <div class="formButtons">
+                        <button type="button" id="btnConfirmar">Confirmar</button>
+                        <button type="button" id="btnCancelar">Cancelar</button>
+                    </div>
+                </form>
+            </div>
         </section>
     </main>
+    <footer class="py-4 border-top border-0 pb-0" style="background-color: #dfdfdf;">
+        <div class="row no-gutters">
+            <div class="col-12 col-md text-center">
+                <img class="mb-2 mx-auto" src="blob.svg" alt="" width="auto" height="80">
+                <p class="d-block mb-3 text-muted" style="font-size: 1rem;color: #181818;">¡Sumérgete en el mundo
+                    Pokémon y
+                    déjate llevar por una experiencia gastronómica única y llena de sabores extraordinarios en nuestro
+                    restaurante
+                    temático! ¡Ven y descubre un lugar donde la magia de Pokémon se mezcla con la deliciosa gastronomía
+                    para crear
+                    momentos inolvidables! ¡Te esperamos para que vivas una aventura culinaria inigualable! <br>©
+                    2023-2024</p>
+            </div>
+            <div class="col-6 col-md">
+                <h4>HORARIO ESTADIO PALETA</h4>
+                <p>Lunes Cerrado</p>
+                <p>Martes a Domingo 13:30 a 16:00 - 20:00 a 24:00</p>
+                <br>
+                <h4>HORARIO ESTADIO TESELIA</h4>
+                <p>Lunes a Sábado 13:30 a 16:00 - 20:00 a 24:00</p>
+                <p>Domingo Cerrado</p>
+            </div>
+            <div class="col-6 col-md">
+                <h4>CONTACTO ESTADIO PALETA</h4>
+                <i class="fas fa-map-marker-alt"></i>
+                <p>Conde Altea, 39 (QUITO)</p>
+                <p>+593981504848</p>
+                <p>alexponluisa123@gmail.com</p>
+                <br>
+                <h4>CONTACTO ESTADIO TESELIA</h4>
+                <i class="fas fa-map-marker-alt"></i>
+                <p>Conde Altea, 39 (AMBATO)</p>
+                <p>+593999933788</p>
+                <p>stevenbrito123@gmail.com</p>
+            </div>
+        </div>
+    </footer>
     <script src="calendario.js"></script>
     <script src="sidebarActivator.js"></script>
     <script src="./reserva.js"></script>
+
+
 </body>
 
 </html>

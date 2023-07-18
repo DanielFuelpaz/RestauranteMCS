@@ -20,50 +20,53 @@
     window.addEventListener('touchstart', initLandbot, { once: true });
     var myLandbot;
     function initLandbot() {
-      if (!myLandbot) {
-        var s = document.createElement('script');s.type = 'text/javascript';s.async = true;
-        s.addEventListener('load', function() {
-          var myLandbot = new Landbot.Livechat({
-            configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-1656775-6R18UULU3YIF2YJD/index.json',
-          });
-        });
-        s.src = 'https://cdn.landbot.io/landbot-3/landbot-3.0.0.js';
-        var x = document.getElementsByTagName('script')[0];
-        x.parentNode.insertBefore(s, x);
-      }
+        if (!myLandbot) {
+            var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true;
+            s.addEventListener('load', function () {
+                var myLandbot = new Landbot.Livechat({
+                    configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-1656775-6R18UULU3YIF2YJD/index.json',
+                });
+            });
+            s.src = 'https://cdn.landbot.io/landbot-3/landbot-3.0.0.js';
+            var x = document.getElementsByTagName('script')[0];
+            x.parentNode.insertBefore(s, x);
+        }
     }
-    </script>
+</script>
+
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #bb140b">
-          <a class="navbar-brand d-lg-none" href="index.html">PikaBites</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample08"
-            aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-    
-          <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="reserva.html">Reserva</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="galeria.html">Galeria</a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="index.html"><img src="blob.svg" width="30" height="30" alt="" />
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="menu.html">Menu</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="informacionempre.html">Nosotros</a>
-              </li>
-            </ul>
-          </div>
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #bb140b;
+        color: #f8f8f8;
+        font-weight: bold;">
+            <a class="navbar-brand d-lg-none" href="index.html">PikaBites</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample08"
+                aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="reserva.html">Reserva</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="menu.html">Menu</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html"><img src="blob.svg" width="30" height="30" alt="" />
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="galeria.html">Galeria</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="informacionempre.html">Nosotros</a>
+                    </li>
+                </ul>
+            </div>
         </nav>
-      </header>
+    </header>
 
     <h1 id="colorful-heading-1" style="
     padding: 2%;
@@ -125,9 +128,9 @@
     margin-bottom: 0;">"Descubre un festín pokémon que despierta tus
         sentidos."</h1>
 
-        <div class="album py-5 custom-bg">
-            <div class="container">
-                <div id="myCarousel2" class="carousel slide" data-ride="carousel">
+    <div class="album py-5 custom-bg">
+        <div class="container">
+            <div id="myCarousel2" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img class="d-block w-100" src="IMG/recetas/ola azul.png" alt="Imagen 1">
@@ -171,6 +174,45 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+
+    <footer class="py-4 border-top border-0 pb-0" style="background-color: #dfdfdf;">
+        <div class="row no-gutters">
+            <div class="col-12 col-md text-center">
+                <img class="mb-2 mx-auto" src="blob.svg" alt="" width="auto" height="80">
+                <p class="d-block mb-3 text-muted" style="font-size: 1rem;color: #181818;">¡Sumérgete en el mundo
+                    Pokémon y
+                    déjate llevar por una experiencia gastronómica única y llena de sabores extraordinarios en nuestro
+                    restaurante
+                    temático! ¡Ven y descubre un lugar donde la magia de Pokémon se mezcla con la deliciosa gastronomía
+                    para crear
+                    momentos inolvidables! ¡Te esperamos para que vivas una aventura culinaria inigualable! <br>©
+                    2023-2024</p>
+            </div>
+            <div class="col-6 col-md">
+                <h4>HORARIO ESTADIO PALETA</h4>
+                <p>Lunes Cerrado</p>
+                <p>Martes a Domingo 13:30 a 16:00 - 20:00 a 24:00</p>
+                <br>
+                <h4>HORARIO ESTADIO TESELIA</h4>
+                <p>Lunes a Sábado 13:30 a 16:00 - 20:00 a 24:00</p>
+                <p>Domingo Cerrado</p>
+            </div>
+            <div class="col-6 col-md">
+                <h4>CONTACTO ESTADIO PALETA</h4>
+                <i class="fas fa-map-marker-alt"></i>
+                <p>Conde Altea, 39 (QUITO)</p>
+                <p>+593981504848</p>
+                <p>alexponluisa123@gmail.com</p>
+                <br>
+                <h4>CONTACTO ESTADIO TESELIA</h4>
+                <i class="fas fa-map-marker-alt"></i>
+                <p>Conde Altea, 39 (AMBATO)</p>
+                <p>+593999933788</p>
+                <p>stevenbrito123@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+
 </body>
 
 </html>
