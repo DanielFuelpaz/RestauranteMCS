@@ -43,20 +43,6 @@ module.exports=function(app,databaseService){
             res.json(restaurantes);
         }).catch(e=>res.status(500).json(e));
     });
-    // app.get('/clienteActual',(req,res)=>{
-    //     const email = req.query.email || req.body.email;
-    //     databaseService.leerClienteActual(email)
-    //     .then(clientes=>{
-    //         res.json(clientes);
-    //     }).catch(e=>res.status(500).json(e));
-    // });
-    // app.get('/restaurante',(req,res)=>{
-    //     const nombre = req.query.nombreR || req.body.nombreR;
-    //     databaseService.leerRestaurante(nombre)
-    //     .then(restaurante=>{
-    //         res.json(restaurante);
-    //     }).catch(e=>res.status(500).json(e));
-    // });
     app.post('/reservas',(req,res)=>{
         const nuevaReserva = req.body;
         console.log(nuevaReserva);
@@ -67,6 +53,12 @@ module.exports=function(app,databaseService){
                 alert('Error al crear la reserva:', e);
               return res.status(500).json({ mensaje: 'Error al crear la reserva' });;
             });
+    });
+    app.get('/reservas',(req,res)=>{
+        databaseService.leerReservas()
+        .then(reservas=>{
+            res.json(reservas);
+        }).catch(e=>res.status(500).json(e));
     });
     
 }
