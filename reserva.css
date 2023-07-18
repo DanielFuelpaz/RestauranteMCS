@@ -105,11 +105,13 @@ h1{
     margin-bottom: 30px;
 }
 .Bienvenida p{
-    width: 70vw;
-    border-bottom:2px solid #bb140b;
-    border-top:2px solid #bb140b;
+    width: 60vw;
     padding: 20px;
+    font-family: pokemonFuente;
+    text-align: center;
+    font-weight: bold;
 }
+
 .reservacion{
     display: grid;
     padding: 20px;
@@ -236,7 +238,11 @@ td{
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
     font-size: 1em;
 }
-
+.formButtons{
+    width: 100%;
+    display:flex;
+    justify-content: space-evenly;
+}
 /* Estados */
 
 .mesAnterior, .mesSiguiente,.form__boton-reservar,.form__seleccion,.form__calendario td{
@@ -257,6 +263,7 @@ td:hover{
 .selected{
     background-color: teal;
 }
+
 @media (min-width:800px){
     .reservacion__container
     {
