@@ -12,8 +12,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;500;600;700&family=Roboto:ital,wght@0,300;0,500;0,700;1,100&display=swap" rel="stylesheet">
 
-    <title>Haz una reservación</title>
-
+    <title>Haz una reservación</title> 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      
 </head>
 <script>
     window.addEventListener('mouseover', initLandbot, { once: true });
@@ -67,12 +68,25 @@
     <main>
         <h1 id="titulo_Poke">Poke reservación</h1>
         <section class="Bienvenida">
-            <p>Explora nuestros restaurantes, elige tu favorito y 
-            </br>¡Haz tu pokereserva ya!</p>
-        </section>
-        <section class="reservacion">
+            <p>💡 En la página de PokeReserva en Línea, podrás explorar las opciones de restaurantes para reservar tu
+                próxima visita. </br></br>Solo necesitas ingresar la fecha y hora de tu reserva, así como el número de comensales
+                en tu grupo.</br> </br>Nuestro amable personal estará listo para recibirte y brindarte una experiencia de comida
+                pokemon
+                inolvidable. 💡</p>
+                <div class="botonesSucursales">
+                    <button class="toggle-sucursales" id="sucursalCiudadBoton">
+                        Ver la sucursal de mi ciudad
+                    </button>
+                    <button class="toggle-sucursales" id="sucursalesBoton">
+                        Ver todas las sucursales
+                    </button>
+                </div>
+                <p id="mensajeNo">¡No tenemos una pokeSucursal en tu ciudad, pero muy pronto lo haremos!</p>
+            </section>
+        <section class="reservacion" id="sucursales">
+
             <div>
-                <div class="reservacion__container reservacion-Ambato">
+                <div class="reservacion__container reservacion-Ambato" id="Ambato">
                     <h2 class="reservacion__title" id="pokeAmbato">PokeRestaurante Ambato</h2>
                 <div class="reservacion__descripcion-container">
                     <p class="reservacion__descripcion">Ubicado en la encantadora ciudad de Ambato, Ecuador, nuestro restaurante es el destino ideal para los amantes de Pokémon que buscan una comida deliciosa en un entorno divertido y acogedor.</p>
@@ -128,7 +142,7 @@
                 <input id="reservarbtn1" class="form__boton-reservar" type="button" value="Reservar">
                 </form>
             </div>
-            <div class="reservacion__container reservacion-Quito">
+            <div class="reservacion__container reservacion-Quito" id="Quito">
                 <h2 class="reservacion__title" id="pokeQuito">PokeRestaurante Quito</h2>
                 <div class="reservacion__descripcion-container">
                     <p class="reservacion__descripcion">Ubicado en la encantadora ciudad de Quito, Ecuador, nuestro restaurante es el destino ideal para los amantes de Pokémon que buscan una comida deliciosa en un entorno divertido y acogedor.</p>
@@ -184,7 +198,7 @@
                 <input id="reservarbtn2" class="form__boton-reservar" type="button" value="Reservar">
                 </form>
             </div>
-            <div class="reservacion__container reservacion-Cuenca">
+            <div class="reservacion__container reservacion-Cuenca" id="Cuenca">
                 <h2 class="reservacion__title" id="pokeCuenca">PokeRestaurante Cuenca</h2>
                 <div class="reservacion__descripcion-container">
                     <p class="reservacion__descripcion">Ubicado en la encantadora ciudad de Cuenca, Ecuador, nuestro restaurante es el destino ideal para los amantes de Pokémon que buscan una comida deliciosa en un entorno divertido y acogedor.</p>
@@ -240,7 +254,7 @@
                 <input id="reservarbtn3" class="form__boton-reservar" type="button" value="Reservar">
                 </form>
             </div>
-            <div class="reservacion__container reservacion-Baños">
+            <div class="reservacion__container reservacion-Baños" id="Banios">
                 <h2 class="reservacion__title" id="pokeBanios">PokeRestaurante Baños</h2>
                 <div class="reservacion__descripcion-container">
                     <p class="reservacion__descripcion">Ubicado en la encantadora ciudad de Baños de Agua Santa, Ecuador, nuestro restaurante es el destino ideal para los amantes de Pokémon que buscan una comida deliciosa en un entorno divertido y acogedor.</p>

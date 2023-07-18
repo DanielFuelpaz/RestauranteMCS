@@ -38,7 +38,7 @@ let fechaReservaParseada = null;
 let ventana;
 let popUpForm = document.getElementById("popUp");
 let btnConfirmar = document.getElementById("btnConfirmar");
-
+let ciudad;
 let botonReserva1 = document.getElementById('reservarbtn1');
 let botonReserva2 = document.getElementById('reservarbtn2');
 let botonReserva3 = document.getElementById('reservarbtn3');
@@ -54,6 +54,73 @@ let selectHora1 = document.getElementById('selectHora1');
 let selectHora2 = document.getElementById('selectHora2');
 let selectHora3 = document.getElementById('selectHora3');
 let selectHora4 = document.getElementById('selectHora4');
+let sucursalesboton = document.getElementById('sucursalesBoton');
+let seccionSucursales = document.getElementById('sucursales');
+let sucursalCiudad = document.getElementById('sucursalCiudadBoton');
+seccionSucursales.style.display='none';
+let mensajeCiudad= document.getElementById('mensajeNo');
+mensajeCiudad.style.display='none';
+
+sucursalesboton.addEventListener('click',function(){
+  seccionSucursales.style.display='block';
+  mensajeCiudad.style.display='none';
+  reservaQuito.style.display='block';
+    reservaCuenca.style.display='block';
+    reservaBanios.style.display='block';
+    reservaAmbato.style.display='block';
+
+})
+
+if (typeof navigator.geolocation == 'object') {
+  navigator.geolocation.getCurrentPosition(obtenerCiudad);
+}
+
+function obtenerCiudad(posicion) {
+  let latitud = posicion.coords.latitude;
+  let longitud = posicion.coords.longitude;
+
+  let url = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${latitud}&lon=${longitud}`;
+
+  $.getJSON(url, function(response) {
+    ciudad = response.address.city || response.address.town || response.address.village || response.address.hamlet;
+  });
+}
+let reservaAmbato = document.getElementById("Ambato");
+let reservaQuito = document.getElementById("Quito");
+let reservaCuenca = document.getElementById("Cuenca");
+let reservaBanios = document.getElementById("Banios");
+
+sucursalCiudad.addEventListener('click',function(){
+  switch(ciudad.toString()){
+    case 'Ambato':
+    seccionSucursales.style.display='block';
+    reservaQuito.style.display='none';
+    reservaCuenca.style.display='none';
+    reservaBanios.style.display='none';
+    break;
+    case 'Quito':
+      seccionSucursales.style.display='block';
+      reservaAmbato.style.display='none';
+      reservaCuenca.style.display='none';
+      reservaBanios.style.display='none';
+    break;
+    case 'Cuenca':
+      seccionSucursales.style.display='block';
+    reservaQuito.style.display='none';
+    reservaAmbato.style.display='none';
+    reservaBanios.style.display='none';
+    break;
+    case 'Baños':
+      seccionSucursales.style.display='block';
+    reservaQuito.style.display='none';
+    reservaCuenca.style.display='none';
+    reservaAmbato.style.display='none';
+    break;
+    default:
+      mensajeCiudad.style.display='block';
+    break;
+  }
+})
 
 document.addEventListener("DOMContentLoaded", function () {
 
