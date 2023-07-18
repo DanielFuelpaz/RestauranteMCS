@@ -1,5 +1,27 @@
 let fechaActual = new Date();
 
+const heading1 = document.getElementById("titulo_Poke");
+const text = heading1.textContent;
+
+const colors = [
+  "red", "blue", "green", "orange", "purple", "brown",
+  "teal", "maroon", "navy", "olive", "fuchsia", "aqua",
+  "lime", "silver", "black", "gray", "rgb(204, 153, 102)"
+];
+
+heading1.innerHTML = "";
+
+for (let i = 0; i < text.length; i++) {
+  const letter = text[i];
+  const span = document.createElement("span");
+  span.textContent = letter;
+  span.style.color = colors[i % colors.length];
+
+  heading1.appendChild(span);
+}
+
+
+
 let calendario = document.getElementById('calendario');
 let calendario1 = document.getElementById('calendario1');
 let calendario2 = document.getElementById('calendario2');
@@ -413,6 +435,7 @@ botonReserva4.addEventListener('click',function(){
     let fechaReserva = anioEscogido + "/" + mesEnNumero + "/" + contenidoCelda;
     let cantidadHorasSeleccionada = selectHora4.value;
     let horas = cantidadHorasSeleccionada.substring(0,cantidadHorasSeleccionada.indexOf(":"));
+    
     fechaReservaParseada = new Date(fechaReserva);
     fechaReservaParseada.setHours(horas);
     let cantidadPersonasSeleccionada = selectPersona4.value;
@@ -445,6 +468,8 @@ function validarNumero(phoneValue) {
   } 
   return true;
 }
+
+
 
   btnConfirmar.addEventListener('click', async function(){
     let cedulaCliente=0;
@@ -580,5 +605,3 @@ function validarNumero(phoneValue) {
               }
         
       });
-  
-  //Mejorar como se muestra el mensaje de exito o de fracaso.

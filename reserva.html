@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="reserva.css">
     <link rel="stylesheet" href="sidebar.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;500;600;700&family=Roboto:ital,wght@0,300;0,500;0,700;1,100&display=swap" rel="stylesheet">
 
@@ -17,37 +16,11 @@
 </head>
 
 <body>
-    <div class="sidebar-activator" id="activatorContainer">
-        <button id="buttonActivator"><img src="./img/snorlax.png" class="activator__img"></img></button>
-        <span id="activatorSpan" class="activator__alert">¡Mira la PokePromoción!</span>
-    </div>
-    <aside id="sideBar">
-        <article class="sideBar-item">
-            <div class="img-container">
-                <button id="closeButton"><img src="./img/close-img.png"></button> 
-            </div> 
-            <div class="promo-container">
-                <div class="promo__header">
-                    <span class="header__price">$6.00</span>
-                    <h3 class="header__title">Poke Desayunos Día del Padre</h3>
-                </div>
-                <p class="promo__description">Por cada desayuno con temática del día del padre, el segundo desayuno con la misma temática va
-                    a mitad de precio.</p>
-                    <button class="promo__button-reservar"><a href="reserva.html">Reservas</a></button>
-                </div>
-            </article>
-    </aside>
     <main>
-        <h1>Poke reservación</h1>
-        <aside class="sidebar">
-            
-        </aside>
+        <h1 id="titulo_Poke">Poke reservación</h1>
         <section class="Bienvenida">
-            <p>💡 En la página de PokeReserva en Línea, podrás explorar las opciones de restaurantes para reservar tu
-                próxima visita. </br></br>Solo necesitas ingresar la fecha y hora de tu reserva, así como el número de comensales
-                en tu grupo.</br> </br>Nuestro amable personal estará listo para recibirte y brindarte una experiencia de comida
-                pokemon
-                inolvidable. 💡</p>
+            <p>Explora nuestros restaurantes, elige tu favorito y 
+            </br>¡Haz tu pokereserva ya!</p>
         </section>
         <section class="reservacion">
             <div>
@@ -294,8 +267,10 @@
           <label for="telefono">Telefono:</label>
           <input type="number" id="telefono" name="telefono" required>
         
-          <button type="button" id="btnConfirmar">Confirmar</button>
-        </form>
+          <div class="formButtons">
+              <button type="button" id="btnConfirmar">Confirmar</button>
+            </div>
+            </form>
     </div>
         </section>
     </main>
