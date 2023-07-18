@@ -236,7 +236,11 @@ td{
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
     font-size: 1em;
 }
-
+.formButtons{
+    width: 100%;
+    display:flex;
+    justify-content: space-evenly;
+}
 /* Estados */
 
 .mesAnterior, .mesSiguiente,.form__boton-reservar,.form__seleccion,.form__calendario td{

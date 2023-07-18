@@ -446,6 +446,10 @@ function validarNumero(phoneValue) {
   return true;
 }
 
+let btnCancelar = document.getElementById('btnCancelar');
+btnCancelar.addEventListener('click', async function(){
+  popUpForm.style.display='none';
+});
   btnConfirmar.addEventListener('click', async function(){
     let cedulaCliente=0;
     let  IDRestaurante="";
