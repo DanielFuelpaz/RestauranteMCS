@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="reserva.css">
-    <link rel="stylesheet" href="sidebar.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,28 +14,25 @@
     <title>Haz una reservación</title>
 
 </head>
-
+<script>
+    window.addEventListener('mouseover', initLandbot, { once: true });
+    window.addEventListener('touchstart', initLandbot, { once: true });
+    var myLandbot;
+    function initLandbot() {
+      if (!myLandbot) {
+        var s = document.createElement('script');s.type = 'text/javascript';s.async = true;
+        s.addEventListener('load', function() {
+          var myLandbot = new Landbot.Livechat({
+            configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-1656775-6R18UULU3YIF2YJD/index.json',
+          });
+        });
+        s.src = 'https://cdn.landbot.io/landbot-3/landbot-3.0.0.js';
+        var x = document.getElementsByTagName('script')[0];
+        x.parentNode.insertBefore(s, x);
+      }
+    }
+    </script>
 <body>
-    <div class="sidebar-activator" id="activatorContainer">
-        <button id="buttonActivator"><img src="./img/snorlax.png" class="activator__img"></img></button>
-        <span id="activatorSpan" class="activator__alert">¡Mira la PokePromoción!</span>
-    </div>
-    <aside id="sideBar">
-        <article class="sideBar-item">
-            <div class="img-container">
-                <button id="closeButton"><img src="./img/close-img.png"></button> 
-            </div> 
-            <div class="promo-container">
-                <div class="promo__header">
-                    <span class="header__price">$6.00</span>
-                    <h3 class="header__title">Poke Desayunos Día del Padre</h3>
-                </div>
-                <p class="promo__description">Por cada desayuno con temática del día del padre, el segundo desayuno con la misma temática va
-                    a mitad de precio.</p>
-                    <button class="promo__button-reservar"><a href="reserva.html">Reservas</a></button>
-                </div>
-            </article>
-    </aside>
     <main>
         <h1>Poke reservación</h1>
         <aside class="sidebar">
